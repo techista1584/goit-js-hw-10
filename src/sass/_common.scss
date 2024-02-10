@@ -1,1 +1,169 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffffd7;
+    color: #212121;
+    line-height: 1.5;
+    margin: 10px;
+    align-content: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border: 1px solid #0d161b;
+}
+
+h1 {
+    margin: 0;
+}
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.breed-select {
+    display: none;
+    max-width: 300px;
+    margin: auto;
+}
+
+.cat-info {
+    margin-top: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: #f8df3d39;
+    box-shadow: 3px 3px 3px grey;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.box-img {
+    display: flex;
+    align-items: flex-start;
+}
+
+.box {
+    width: 400px;
+}
+
+/*loader */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.loader {
+    position: relative;
+    width: 88px;
+    height: 68px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: #edda0973;
+    /*eyelid*/
+    border: 8px solid #131a1d;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: transparent;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #f28a14;
+    z-index: 7;
+    border-bottom: 8px solid #2e3031;
+    box-sizing: border-box;
+    animation: eyeShade 1s infinite;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+    width: 8px;
+    z-index: 2;
+    height: 42px;
+    background: #010507;
+    border-radius: 50%;
+    animation: eyeMove 1s infinite;
+}
+
+@keyframes eyeShade {
+    0% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(5px)
+    }
+
+    40%,
+    50% {
+        transform: translateY(-5px)
+    }
+
+    60% {
+        transform: translateY(-8px)
+    }
+
+    75% {
+        transform: translateY(5px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+@keyframes eyeMove {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    20% {
+        transform: translate(0px, 5px)
+    }
+
+    40%,
+    50% {
+        transform: translate(0px, -5px)
+    }
+
+    60% {
+        transform: translate(-10px, -5px)
+    }
+
+    75% {
+        transform: translate(-20px, 5px)
+    }
+
+    100% {
+        transform: translate(0, 10px)
+    }
+}
